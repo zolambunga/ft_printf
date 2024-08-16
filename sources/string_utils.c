@@ -21,6 +21,8 @@ int	ft_putstr(const char *str)
 {
 	int	len;
 
+	if(str == NULL)
+		return(write(1, "(null)", 6));
 	len = 0;
 	while (str[len])
 	{
@@ -54,9 +56,9 @@ int	ft_printhex(unsigned long value, int sign, char flag)
 
 	i = 0;
 	len = 0;
-	if(flag == '#' && sign == 0)
+	if(flag == '#' && sign == 0 && value != 0)
 		len += ft_putstr("0x");
-	else if(flag == '#' && sign == 1)
+	else if(flag == '#' && sign == 1 && value != 0)
 		len += ft_putstr("0X");
 	if (value == 0)
 		return (ft_putchar('0'));
