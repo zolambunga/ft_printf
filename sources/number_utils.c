@@ -28,21 +28,22 @@ int	ft_putnbr_decimal(int nbr, char flag)
 	int	len;
 
 	len = 0;
-	if (nbr == -2147483648)
-		return (ft_putstr("-2147483648"));
-	if (flag == '+' && nbr >= 0)
+	if (flag == '+' && nbr > 0)
 		len += ft_putchar('+');
-	else if (flag == ' ' && nbr >= 0)
+	else if (flag == ' ')
 		len += ft_putchar(' ');
-
-	if (nbr < 0)
+	if (nbr == -2147483648)
+		return(ft_putstr("-2147483648"));
+	else
 	{
-		len += ft_putchar('-');
-		nbr *= -1;
+		if (nbr < 0)
+		{
+			len += ft_putchar('-');
+			nbr *= -1;
+		}
+		if (nbr >= 10)
+			len += ft_putnbr_decimal(nbr / 10, 'a');
 	}
-	if (nbr >= 10)
-		len += ft_putnbr_decimal(nbr / 10, 'a');
-
 	len += ft_putchar("0123456789"[nbr % 10]);
 	return (len);
 }

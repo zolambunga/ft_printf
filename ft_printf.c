@@ -34,7 +34,7 @@ static void	formater(const char *str, int *total, va_list *ap, char flag)
 
 static void	process_flags(const char *str, char flag, int *total, va_list *ap)
 {
-	if(flag == '+' || (flag == ' ' && *(str+1) == 'd') || *(str+1) == 'i')
+	if(flag == '+' || (flag == ' ' && *(str+1) == 'd'))
 	{
 		str++;
 		formater(str, total, ap, flag);

@@ -6,7 +6,7 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 18:42:25 by zombunga          #+#    #+#             */
-/*   Updated: 2024/08/15 18:43:18 by zombunga         ###   ########.fr       */
+/*   Updated: 2024/08/20 16:25:33 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int	ft_putstr(const char *str)
 {
 	int	len;
 
-	if(str == NULL)
-		return(write(1, "(null)", 6));
 	len = 0;
+	if (!str)
+		return (write(1, "(null)", 6));
 	while (str[len])
 	{
 		write(1, &str[len], 1);
@@ -56,9 +56,9 @@ int	ft_printhex(unsigned long value, int sign, char flag)
 
 	i = 0;
 	len = 0;
-	if(flag == '#' && sign == 0 && value != 0)
+	if(flag == '#' && sign == 0)
 		len += ft_putstr("0x");
-	else if(flag == '#' && sign == 1 && value != 0)
+	else if(flag == '#' && sign == 1)
 		len += ft_putstr("0X");
 	if (value == 0)
 		return (ft_putchar('0'));
