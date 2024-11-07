@@ -2,7 +2,7 @@
 A basic implementation of the Printf function from C language
 
 follow this to help you in adding other flags in the code
-
+<code>
 #include <stdio.h>
 
 int main()
@@ -11,7 +11,6 @@ int main()
 	float	pi = 3.14159;
 	int	hex_num = 255;
 	char	*str = "Oi";
-
 	printf("|%-10s|\n", str);
 	printf("|%010d|\n", num);
 	printf("|%.2f|\n", pi);
@@ -20,3 +19,4 @@ int main()
 	printf("|%+d|\n", num);
 	return (0);
 }
+</code>
