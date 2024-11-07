@@ -2,7 +2,9 @@
 A basic implementation of the Printf function from C language
 
 follow this to help you in adding other flags in the code
-<code>
+
+
+<script>
 #include <stdio.h>
 
 int main()
@@ -19,4 +21,4 @@ int main()
 	printf("|%+d|\n", num);
 	return (0);
 }
-</code>
+</script>
